@@ -5,7 +5,7 @@ const connectedToDb = new EventEmitter();
 exports.connectedToDb = connectedToDb;
 
 MongoClient.connect('mongodb://grrrr:12345678a@ds127139.mlab.com:27139/lost2600', { useNewUrlParser: true},(err, client) => {//you can put url to the local mongo or a cloud one. ex aws.
-	if (err) return console.log(err)
+	if (err) return console.log("error is", err)
 	db = client.db('lost2600') // whatever your database name is
   	connectedToDb.emit('connected')
 })
